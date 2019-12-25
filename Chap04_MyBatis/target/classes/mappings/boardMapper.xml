@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.multi.biz.board">
+	
+	<select id="getBoardList" resultType="com.multi.biz.board.vo.BoardVO">
+		select * from board order by seq desc
+	</select>
+	
+	<select id="getBoard" resultType="board">
+		select * from board where seq = #{seq}
+	</select>
+	
+	<insert id="addBoard" parameterType="board">
+		<!-- 먼저 실행되고 결과를 int 타입으로 seq라는 변수에 대입해 준다 -->
+		<selectKey keyProperty="seq" resultType="int" order="BEFORE">
+			select nvl( max(seq), 0 ) + 1 from board
+		</selectKey>
+		
+		insert into board(seq, title, nickname, content) 
+			values( #{seq}, #{title}, #{nickname}, #{content} )
+	</insert>
+	
+	
+	<update id="updateBoard" parameterType="board">
+		update board set title = #{title}, content = #{content} where seq = #{seq}
+	</update>
+	
+	
+	<delete id="deleteBoard" parameterType="board">
+		delete from board where seq = #{seq}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

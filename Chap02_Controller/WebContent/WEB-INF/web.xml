@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Chap02_Controller</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- servlet을 등록하는 역할만 한다. -->
+  <servlet>
+  	<servlet-name>logoutCtrl</servlet-name>
+  	<servlet-class>com.multi.view.user.LogoutCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>logoutCtrl</servlet-name>
+  	<url-pattern>/logoutCtrl</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>loginCtrl</servlet-name>
+  	<servlet-class>com.multi.view.user.LoginCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginCtrl</servlet-name>
+  	<url-pattern>/loginCtrl</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>updateBoardCtrl</servlet-name>
+  	<servlet-class>com.multi.view.board.UpdateBoardCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>updateBoardCtrl</servlet-name>
+  	<url-pattern>/updateBoardCtrl</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+  	<servlet-name>deleteBoardCtrl</servlet-name>
+  	<servlet-class>com.multi.view.board.DeleteBoardCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deleteBoardCtrl</servlet-name>
+  	<url-pattern>/deleteBoardCtrl</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet>
+  	<servlet-name>addBoardCtrl</servlet-name>
+  	<servlet-class>com.multi.view.board.AddBoardCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addBoardCtrl</servlet-name>
+  	<url-pattern>/addBoardCtrl</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>getBoardCtrl</servlet-name>
+  	<servlet-class>com.multi.view.board.GetBoardCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getBoardCtrl</servlet-name>
+  	<url-pattern>/getBoardCtrl</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>getBoardListCtrl</servlet-name>
+  	<servlet-class>com.multi.view.board.GetBoardListCtrl</servlet-class>
+  </servlet>
+  <!-- 사용자의 어떤 요청 이름과 어떤 서블릿을 매칭해서 실행할 지 기술한다. -->
+  <servlet-mapping>
+  	<servlet-name>getBoardListCtrl</servlet-name>
+  	<url-pattern>/getBoardListCtrl</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

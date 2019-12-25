@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd ">
+  <tlib-version>1.0</tlib-version>
+  <short-name>CUSTOMLIB</short-name>
+  <uri>http://com.multi.view.customLib</uri>
+  
+  <!-- web.xml에 등록해야 서블릿 컨테이너가 이 파일을 읽어 static 영역에 올리는 작업을 한다 -->
+
+  <function>
+  	<name>abs</name> <!-- 이름은 편한걸로 줘도 됨 -->
+  	<function-class>java.lang.Math</function-class>
+  	<function-signature>int abs(int)</function-signature>
+  </function>
+  
+  <function>
+  	<name>random</name>
+  	<function-class>java.lang.Math</function-class>
+  	<function-signature>double random()</function-signature>
+  </function>
+
+  <function>
+  	<name>ceil</name>
+  	<function-class>java.lang.Math</function-class>
+  	<function-signature>double ceil(double)</function-signature>
+  </function>
+  
+  <!-- 작성한 사용자 정의 static method를 등록한다. -->
+  <function>
+  	<name>getNumber</name>
+  	<function-class>com.multi.biz.A02_EL.A07_MakeStatic</function-class>
+  	<function-signature>int getNumber(double)</function-signature>
+  </function>
+  
+  <!-- 리턴타입, 파라메터가 리퍼런스 타입의 경우 full path로 기술해야한다. -->
+  <function>
+  	<name>getGreet</name>
+  	<function-class>com.multi.biz.A02_EL.A07_MakeStatic</function-class>
+  	<function-signature>java.lang.String getGreet(java.lang.String)</function-signature>
+  </function>
+
+</taglib>
